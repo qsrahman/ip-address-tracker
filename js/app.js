@@ -42,7 +42,7 @@ ipAddressForm.addEventListener('submit', e => {
         fetch(`http://ip-api.com/json/${ipAddress.value}`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
+                console.log(data)
                 ipOutput.innerText = data.query
                 locationOutput.innerText = `${data.city}, ${data.region} ${data.zip}`
                 timezoneOutput.innerText = data.timezone
@@ -54,3 +54,5 @@ ipAddressForm.addEventListener('submit', e => {
     }
     ipAddress.value = ''
 })
+
+drawMap(33.9923, 71.5593)
